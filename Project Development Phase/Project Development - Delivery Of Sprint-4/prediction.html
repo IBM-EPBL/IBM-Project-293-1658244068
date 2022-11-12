@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'style.css') }}"
+    />
+    <title>prediction</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__heading">Vechile Damage Detection</div>
+      <div class="navbar__items">
+        <a class="navbar__items__text" href="/">Home</a>
+        <a class="navbar__items__text" href="/logout">Logout</a>
+    </nav>
+    <form action="result" method="post" enctype="multipart/form-data">
+      Select image to upload:
+      <input type="file" name="_file" id="_file">
+      <input type="submit" value="Upload Image" name="submit">
+    </form>
+    <main>
+      <div class="main__content">
+        <h1 class="main__content__heading">The Estimated Cost of the Damage:{{prediction}}</h1>
+      </div>
+    </main>
+  </body>
+</html>
